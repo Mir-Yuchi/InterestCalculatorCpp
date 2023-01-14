@@ -3,18 +3,11 @@
 // CIR - Compound Interest Rate
 using namespace std;
 
-void result_f(double a, double b, double c, double d ){
-    double percentage = b / 100;
-    double presult = 1 + (percentage / c);// using formula compound interest rate
-    double result = pow(presult, c * d);//presult in month multiplication to year POWER
-    cout << result * a << "$" << endl;
-}
-void result_p(double  a, double b, double c, double d) {
-    double percentage = b / 100;
-    double presult = 1 + (percentage / c); // using formula compound interest rate
-    double result = pow(presult, c * d);//presult in month multiplication to year POWER
-    cout << a / result;
-}
+void result_f(double, double, double, double);//function prototype
+
+void result_p(double, double, double, double);//function prototype
+
+
 int main() {
     string future = "future";
     string present = "present";
@@ -35,7 +28,7 @@ int main() {
         cin >> month;
         cout << "How many years: ";
         cin >> year;
-        result_f(Present_profit,percant,month,year);
+        result_f(Present_profit, percant, month, year);
     } else if (input == present) {
         cout << "Enter future profit: ";
         cin >> Future_profit;
@@ -45,8 +38,22 @@ int main() {
         cin >> month;
         cout << "How many years: ";
         cin >> year;
-        result_p(Future_profit, percant,month,year);
+        result_p(Future_profit, percant, month, year);
     }
 
     return 0;
+}
+
+void result_f(double a, double b, double c, double d) {
+    double percentage = b / 100;
+    double presult = 1 + (percentage / c);// using formula compound interest rate
+    double result = pow(presult, c * d);//presult in month multiplication to year POWER
+    cout << result * a << "$" << endl;
+}
+
+void result_p(double a, double b, double c, double d) {
+    double percentage = b / 100;
+    double presult = 1 + (percentage / c); // using formula compound interest rate
+    double result = pow(presult, c * d);//presult in month multiplication to year POWER
+    cout << a / result;
 }
