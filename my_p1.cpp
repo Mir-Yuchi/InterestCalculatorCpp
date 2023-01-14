@@ -14,7 +14,7 @@ int main() {
     string input;
     double Future_profit;
     double Present_profit;
-    float percant;
+    float percent;
     double month;
     double year;
     cout << "Type which profit type you want to see: ";
@@ -23,22 +23,22 @@ int main() {
         cout << "Enter present profit: ";
         cin >> Present_profit;
         cout << "Enter percentage: ";
-        cin >> percant;
+        cin >> percent;
         cout << "How many times per year: ";
         cin >> month;
         cout << "How many years: ";
         cin >> year;
-        result_f(Present_profit, percant, month, year);
+        result_f(Present_profit, percent, month, year);
     } else if (input == present) {
         cout << "Enter future profit: ";
         cin >> Future_profit;
         cout << "Enter percentage: ";
-        cin >> percant;
+        cin >> percent;
         cout << "How many times per year: ";
         cin >> month;
         cout << "How many years: ";
         cin >> year;
-        result_p(Future_profit, percant, month, year);
+        result_p(Future_profit, percent, month, year);
     }
 
     return 0;
