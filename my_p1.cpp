@@ -6,11 +6,10 @@ int main() {
     string future = "future";
     string present = "present";
     string input;
-    double nt;
     double Future_profit;
     double Present_profit;
-    float r;
-    double n;
+    float percant;
+    double month;
     double year;
     cout << "Type which profit type you want to see: ";
     cin >> input;
@@ -18,28 +17,28 @@ int main() {
         cout << "Enter present profit: ";
         cin >> Present_profit;
         cout << "Enter percentage: ";
-        cin >> r;
-        double percentage = r / 100;
+        cin >> percant;
+        double percentage = percant / 100;
         cout << "How many times per year: ";
-        cin >> n;
+        cin >> month;
         cout << "How many years: ";
         cin >> year;
-        double nn = 1 + (percentage / n);
-        double ff = pow(nn, n * year);
-        cout << ff * Present_profit << "$" << endl;
+        double presult = 1 + (percentage / month);// using formula compound interest rate
+        double result = pow(presult, month * year);//presult in month multiplication to year POWER
+        cout << result * Present_profit << "$" << endl;
     } else if (input == present) {
         cout << "Enter future profit: ";
         cin >> Future_profit;
         cout << "Enter percentage: ";
-        cin >> r;
-        double percentage = r / 100;
+        cin >> percant;
+        double percentage = percant / 100;
         cout << "How many times per year: ";
-        cin >> n;
+        cin >> month;
         cout << "How many years: ";
         cin >> year;
-        double nn = 1 + (percentage / n);
-        double ff = pow(nn, n * year);
-        cout << Future_profit / ff;
+        double presult = 1 + (percentage / month); // using formula compound interest rate
+        double result = pow(presult, month * year);//presult in month multiplication to year POWER
+        cout << Future_profit / result;
     }
 
     return 0;
