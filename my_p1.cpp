@@ -1,13 +1,7 @@
-#include <iostream>
+#include <bits/stdc++.h>
+// bits/stdc++.h - includes all libraries
 using namespace std;
 
-double pow ( double a , double b ) {
-    double p =1;
-    for(int i =0; i < b ; i ++) {
-        p *= a ;
-    }
-    return p ;
-}
 int main() {
     string future = "future";
     string present = "present";
@@ -31,9 +25,9 @@ int main() {
         cout << "How many years: ";
         cin >> year;
         double nn = 1 + (percentage / n);
-   double ff=pow(nn,n*year);
-   cout<<ff*Present_profit<<"$"<<endl;
-    } else if(input==present){
+        double ff = pow(nn, n * year);
+        cout << ff * Present_profit << "$" << endl;
+    } else if (input == present) {
         cout << "Enter future profit: ";
         cin >> Future_profit;
         cout << "Enter percentage: ";
@@ -44,8 +38,8 @@ int main() {
         cout << "How many years: ";
         cin >> year;
         double nn = 1 + (percentage / n);
-        double ff=pow(nn,n*year);
-        cout<<Future_profit/ff;
+        double ff = pow(nn, n * year);
+        cout << Future_profit / ff;
     }
 
     return 0;
