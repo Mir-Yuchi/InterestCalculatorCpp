@@ -9,36 +9,42 @@ void result_p(double, double, double, double);//function prototype
 
 
 int main() {
-    string future = "future";
-    string present = "present";
-    string input;
-    double Future_profit;
-    double Present_profit;
-    float percent;
-    double month;
-    double year;
-    cout << "Type which profit type you want to see: ";
-    cin >> input;
-    if (input == future) {
-        cout << "Enter present profit: ";
-        cin >> Present_profit;
-        cout << "Enter percentage: ";
-        cin >> percent;
-        cout << "How many times per year: ";
-        cin >> month;
-        cout << "How many years: ";
-        cin >> year;
-        result_f(Present_profit, percent, month, year);
-    } else if (input == present) {
-        cout << "Enter future profit: ";
-        cin >> Future_profit;
-        cout << "Enter percentage: ";
-        cin >> percent;
-        cout << "How many times per year: ";
-        cin >> month;
-        cout << "How many years: ";
-        cin >> year;
-        result_p(Future_profit, percent, month, year);
+    string type_input;
+    cout<<"\tWrite type of calculator\n"
+          "  CIR -- Compound Interest Rate\n";
+    cin>>type_input;
+    if(type_input=="CIR") {
+        string future = "future";
+        string present = "present";
+        string input;
+        double Future_profit;
+        double Present_profit;
+        float percent;
+        double month;
+        double year;
+        cout << "Type which profit type you want to see: ";
+        cin >> input;
+        if (input == future) {
+            cout << "Enter present profit: ";
+            cin >> Present_profit;
+            cout << "Enter percentage: ";
+            cin >> percent;
+            cout << "How many times per year: ";
+            cin >> month;
+            cout << "How many years: ";
+            cin >> year;
+            result_f(Present_profit, percent, month, year);
+        } else if (input == present) {
+            cout << "Enter future profit: ";
+            cin >> Future_profit;
+            cout << "Enter percentage: ";
+            cin >> percent;
+            cout << "How many times per year: ";
+            cin >> month;
+            cout << "How many years: ";
+            cin >> year;
+            result_p(Future_profit, percent, month, year);
+        }
     }
 
     return 0;
