@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 // bits/stdc++.h - includes all libraries
-// CIR - Compound Interest Rate
 using namespace std;
 
 void result_f(double, double, double, double);//function prototype
@@ -11,7 +10,9 @@ void result_p(double, double, double, double);//function prototype
 int main() {
     string type_input;
     cout<<"\tWrite type of calculator\n"
-          "  CIR -- Compound Interest Rate\n";
+          "  CIR -- Compound Interest Rate\n"
+          "  SIR -- Simple Interest Rate\n"
+          "  Cont -- Continuous Interest Rate\n";
     cin>>type_input;
     if(type_input=="CIR") {
         string input;
@@ -39,6 +40,13 @@ int main() {
             cin >> year;
             result_p(Future_profit, percent, month, year);
         }
+    }else if(type_input=="SIR"){
+        cout<<"   !===--Under development--===!\n";
+    }else if(type_input=="Cont"){
+        cout<<"   !===--Under development--===!\n";
+    }else {
+        cout << "\t  ERROR\n";
+        cout << "   You Did Something Wring!!!\n";
     }
 
     return 0;
