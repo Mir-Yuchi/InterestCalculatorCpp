@@ -14,17 +14,11 @@ int main() {
           "  CIR -- Compound Interest Rate\n";
     cin>>type_input;
     if(type_input=="CIR") {
-        string future = "future";
-        string present = "present";
         string input;
-        double Future_profit;
-        double Present_profit;
-        float percent;
-        double month;
-        double year;
+        double Future_profit, Present_profit, percent, month, year;
         cout << "Type which profit type you want to see: ";
         cin >> input;
-        if (input == future) {
+        if (input == "future") {
             cout << "Enter present profit: ";
             cin >> Present_profit;
             cout << "Enter percentage: ";
@@ -34,7 +28,7 @@ int main() {
             cout << "How many years: ";
             cin >> year;
             result_f(Present_profit, percent, month, year);
-        } else if (input == present) {
+        } else if (input == "present") {
             cout << "Enter future profit: ";
             cin >> Future_profit;
             cout << "Enter percentage: ";
