@@ -14,11 +14,15 @@ int main() {
           "  SIR -- Simple Interest Rate\n"
           "  Cont -- Continuous Interest Rate\n";
     cin>>type_input;
+    transform(type_input.begin(), type_input.end(), type_input.begin(), ::toupper);// string to uppercase
     if(type_input=="CIR") {
         string input;
         double Future_profit, Present_profit, percent, month, year;
-        cout << "Type which profit type you want to see: ";
+        cout << "\t Type which profit type you want to see\n"
+                "   Options: Future\n"
+                "            Present\n";
         cin >> input;
+        transform(input.begin(), input.end(), input.begin(), ::tolower); //string to lowercase
         if (input == "future") {
             cout << "Enter present profit: ";
             cin >> Present_profit;
@@ -39,6 +43,9 @@ int main() {
             cout << "How many years: ";
             cin >> year;
             result_p(Future_profit, percent, month, year);
+        }else {
+            cout << "\t  ERROR\n";
+            cout << "   You Did Something Wring!!!\n";
         }
     }else if(type_input=="SIR"){
         cout<<"   !===--Under development--===!\n";
