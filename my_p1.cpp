@@ -13,8 +13,10 @@ int main() {
     cout<<"\tWrite type of calculator\n"
           "  CIR -- Compound Interest Rate\n"
           "  SIR -- Simple Interest Rate\n"
-          "  Cont -- Continuous Interest Rate\n";
+          "  Cont -- Continuous Interest Rate\n"
+          "\tEnter 0 to stop program\n";
     cin>>type_input;
+    string stopper = type_input;
     transform(type_input.begin(), type_input.end(), type_input.begin(), ::toupper);// string to uppercase
     if(type_input=="CIR") {
         cout << "\t Type which profit type you want to see\n"
@@ -96,12 +98,16 @@ int main() {
             cin >> year;
             cout<<Future_profit/pow(M_E,(percent/100*year))<<"$"<<endl;
         }
-    }else {
+    }else if(type_input=="0") {
+        cout<<"Thank you for using :)"<<endl;
+    return 0;
+    }
+    else{
         cout << "\t  ERROR\n";
         cout << "   You Did Something Wring!!!\n";
     }
 
-    return 0;
+    main();
 }
 
 void result_f(double a, double b, double c, double d) {
