@@ -8,7 +8,7 @@ void result_p(double, double, double, double);//function prototype
 
 
 int main() {
-    string type_input;
+    string type_input, input;
     double Future_profit, Present_profit, percent, month, year;
     cout<<"\tWrite type of calculator\n"
           "  CIR -- Compound Interest Rate\n"
@@ -17,7 +17,6 @@ int main() {
     cin>>type_input;
     transform(type_input.begin(), type_input.end(), type_input.begin(), ::toupper);// string to uppercase
     if(type_input=="CIR") {
-        string input;
         cout << "\t Type which profit type you want to see\n"
                 "   Options: Future\n"
                 "            Present\n";
@@ -48,12 +47,11 @@ int main() {
             cout << "   You Did Something Wring!!!\n";
         }
     }else if(type_input=="SIR") {
-        string input;
         cout << "\t Type which profit type you want to see\n"
                 "   Options: Future\n"
                 "            Present\n";
         cin >> input;
-        transform(type_input.begin(), type_input.end(), type_input.begin(), ::toupper);
+        transform(input.begin(), input.end(), input.begin(), ::tolower);
         if (input=="future"){
             cout << "Enter present profit: ";
             cin >> Present_profit;
@@ -75,8 +73,29 @@ int main() {
             cout << "   You Did Something Wring!!!\n";
         }
 
-    }else if(type_input=="Cont"){
-        cout<<"   !===--Under development--===!\n";
+    }else if(type_input=="CONT"){
+        cout << "\t Type which profit type you want to see\n"
+                "   Options: Future\n"
+                "            Present\n";
+        cin >> input;
+        transform(input.begin(), input.end(), input.begin(), ::tolower);
+        if (input=="future") {//A=P*e^rt
+            cout << "Enter present profit: ";
+            cin >> Present_profit;
+            cout << "Enter percentage: ";
+            cin >> percent;
+            cout << "Enter Period in years: ";
+            cin >> year;
+            cout<<Present_profit* pow(M_E,(percent/100*year))<<"$"<<endl;
+        }else if(input=="present"){
+            cout << "Enter future profit: ";
+            cin >> Future_profit;
+            cout << "Enter percentage: ";
+            cin >> percent;
+            cout << "Enter Period in years: ";
+            cin >> year;
+            cout<<Future_profit/pow(M_E,(percent/100*year))<<"$"<<endl;
+        }
     }else {
         cout << "\t  ERROR\n";
         cout << "   You Did Something Wring!!!\n";
