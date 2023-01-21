@@ -61,8 +61,20 @@ int main() {
             cin >> percent;
             cout << "Enter Period in years: ";
             cin >> year;
-            cout<<(Present_profit*year*percent/100)+Present_profit<< "$" << endl;
+            cout<<Present_profit*year*percent/100<< "$" << endl;
+        }else if (input=="present"){
+            cout << "Enter future profit: ";
+            cin >> Future_profit;
+            cout << "Enter percentage: ";
+            cin >> percent;
+            cout << "Enter Period in years: ";
+            cin >> year;
+            cout<<Future_profit/(percent*year/100)<<"$"<<endl;
+        }else {
+            cout << "\t  ERROR\n";
+            cout << "   You Did Something Wring!!!\n";
         }
+
     }else if(type_input=="Cont"){
         cout<<"   !===--Under development--===!\n";
     }else {
